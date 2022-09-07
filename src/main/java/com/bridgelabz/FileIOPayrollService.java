@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class FileIOPayrollService implements PayrollService {
@@ -29,5 +30,11 @@ public class FileIOPayrollService implements PayrollService {
     @Override
     public long countEntries() throws IOException {
         return Files.lines(new File(FILE_PATH).toPath()).count();
+    }
+    public List<String> readData() throws IOException {
+        List<String> employeePayrollList = new ArrayList<>();
+            Files.lines(new File(FILE_PATH).toPath()).map(String::trim)
+                    .forEach(employeePayrollList::add);
+        return employeePayrollList;
     }
 }

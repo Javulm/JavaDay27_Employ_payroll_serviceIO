@@ -1,6 +1,7 @@
 package com.bridgelabz;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class EmployPayrollService {
@@ -68,6 +69,12 @@ public class EmployPayrollService {
         long count= employPayrollService.countEntries(IOServices.CONSOLE_IO);
 //        Show FileIO count no of entries.
         System.out.println(count);
+        FileIOPayrollService fileIOPayrollService = new FileIOPayrollService();
+        try {
+            fileIOPayrollService.readData();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 
