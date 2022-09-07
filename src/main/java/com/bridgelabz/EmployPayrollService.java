@@ -65,7 +65,9 @@ public class EmployPayrollService {
         EmployPayrollService employPayrollService = new EmployPayrollService();
         employPayrollService.readEmployPayrollData(IOServices.CONSOLE_IO);
         employPayrollService.writeEmployPayrollData(IOServices.CONSOLE_IO);
-        employPayrollService.countEntries(IOServices.CONSOLE_IO);
+        long count= employPayrollService.countEntries(IOServices.CONSOLE_IO);
+//        Show FileIO count no of entries.
+        System.out.println(count);
     }
 }
 
