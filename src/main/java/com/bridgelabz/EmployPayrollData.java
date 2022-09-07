@@ -8,7 +8,7 @@ public class EmployPayrollData {
     public EmployPayrollData() {
     }
 
-    public EmployPayrollData(int id, double salary, String name) {
+    public EmployPayrollData(int id, String name, double salary) {
         this.name = name;
         this.id = id;
         this.salary = salary;
